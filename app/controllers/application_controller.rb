@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  helper_method :current_user
+  
   def require_no_user!
     redirect_to dashboard_url(current_user) if current_user
   end
